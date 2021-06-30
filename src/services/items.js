@@ -7,7 +7,7 @@ const BASE_URL = "https://hacker-news.firebaseio.com/v0"
 const ITEM_URL = "https://api.hnpwa.com/v0/item"
 
 export async function getPostIds(limit = 20) {
-  const ids = await fetch(`${BASE_URL}/topstories.json`).then((res) =>
+  const ids = await fetch(`${BASE_URL}/beststories.json`).then((res) =>
     res.json()
   )
   return ids.slice(0, limit)
