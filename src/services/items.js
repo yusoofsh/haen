@@ -6,8 +6,8 @@ const BASE_URL = "https://hacker-news.firebaseio.com/v0"
 // https://github.com/tastejs/hacker-news-pwas
 const ITEM_URL = "https://api.hnpwa.com/v0/item"
 
-export async function getPostIds(limit = 20) {
-  const ids = await fetch(`${BASE_URL}/beststories.json`).then((res) =>
+export async function getPostIds(limit = 24) {
+  const ids = await fetch(`${BASE_URL}/topstories.json`).then((res) =>
     res.json()
   )
   return ids.slice(0, limit)
@@ -59,7 +59,7 @@ export async function getPostDataWithComments(id) {
   return data
 }
 
-export async function getPosts(limit = 20) {
+export async function getPosts(limit = 24) {
   const postIds = await getPostIds(limit)
   const promises = postIds.map(async (id) => await getPostData(id))
   return Promise.all(promises)
