@@ -10,20 +10,9 @@ function PostCard({ data }) {
 
   return (
     <div className="group mb-6">
-      {data.url === data.id ? (
-        <Link href={`/${data.id}`}>
-          <a className={titleClassName}>{data.title}</a>
-        </Link>
-      ) : (
-        <a
-          href={data.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={titleClassName}
-        >
-          {data.title}
-        </a>
-      )}
+      <Link href={`/${data.id}`}>
+        <a className={titleClassName}>{data.title}</a>
+      </Link>
       <div className="text-sm font-normal text-gray-400">
         <span>{data.points} points</span>
         <span className="text-gray-700"> • </span>
