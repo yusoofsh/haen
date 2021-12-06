@@ -17,11 +17,7 @@ function PostCard({ data }) {
         <span>{data.points} points</span>
         <span className="text-gray-700"> • </span>
         <span>
-          <Link href={`/${data.id}`}>
-            <a className="border-b border-dotted border-gray-400 hover:text-white focus:text-white hover:border-solid">
-              {data.comments_count} comment{data.comments_count != 1 && "s"}
-            </a>
-          </Link>
+          {data.comments_count} comment{data.comments_count != 1 && "s"}
         </span>
         <span className="text-gray-700"> • </span>
         {/* <span>by {data.user}</span> */}
