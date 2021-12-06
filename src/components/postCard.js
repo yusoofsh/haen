@@ -19,8 +19,13 @@ function PostCard({ data }) {
         <span>
           {data.comments_count} comment{data.comments_count != 1 && "s"}
         </span>
+        {data.user && (
+          <>
+            <span className="text-gray-700"> • </span>
+            <span>by {data.user}</span>
+          </>
+        )}
         <span className="text-gray-700"> • </span>
-        {/* <span>by {data.user}</span> */}
         <span>
           {formatDistanceToNowStrict(fromUnixTime(data.time), {
             addSuffix: true,
